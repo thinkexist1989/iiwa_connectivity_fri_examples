@@ -7,6 +7,10 @@ file(GLOB SOURCES
         "src/**/*.c"
         "src/**/*.cpp")
 
+if(UNIX)
+    message(STATUS "Unix-like OS need HAVE_SOCKLEN_T flag")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHAVE_SOCKLEN_T" CACHE STRING "Set C++ Compiler Flags" FORCE)
+endif()
 
 ############################################################
 # Create a library
