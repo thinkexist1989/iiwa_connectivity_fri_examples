@@ -5,11 +5,11 @@ project(LBRTorqueSineOverlay)
 add_executable(${PROJECT_NAME} LBRTorqueSineOverlayApp.cpp LBRTorqueSineOverlayClient.cpp)
 
 target_include_directories(${PROJECT_NAME}
-        PUBLIC
+        PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(${PROJECT_NAME}
-        PUBLIC
+        PRIVATE
             FRI::libFRIClient
 )
